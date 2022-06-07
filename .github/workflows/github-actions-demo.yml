@@ -14,6 +14,6 @@ jobs:
         id: pyscript
         run: |
           MY_STRING=$(python test.py)
-          echo "::set-output name=content::$MY_STRING"
+          echo "::set-output name=content::${MY_STRING//$'\n'/'%0A'}"
       - name: display output from step
         run: echo "${{ steps.pyscript.outputs.content }}"
