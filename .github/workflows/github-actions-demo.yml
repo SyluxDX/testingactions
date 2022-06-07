@@ -13,8 +13,7 @@ jobs:
       - name: execute py script # run the run.py to get the latest data
         id: pyscript
         run: |
-          python test.py
-          MY_STRING="hello"
+          MY_STRING=$(python test.py)
           echo "::set-output name=content::$MY_STRING"
       - name: display output from step
         run: echo "${{ steps.pyscript.outputs.content }}"
