@@ -7,9 +7,14 @@ jobs:
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner.
       - name: setup python
+        id: pyscript
         uses: actions/setup-python@v2
         with:
           python-version: 3.8 #install the python needed
       - name: execute py script # run the run.py to get the latest data
         run: |
           python test.py
+          MY_STRING="hello"
+          echo "::set-output name=content::$MY_STRING"
+      - name: display output from step
+        run: echo "${{ steps.pyscript.outputs.content }}"
