@@ -1,0 +1,66 @@
+name: Simple Issue
+description: Form to test issue template and github actions
+labels: ["single"]
+# assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This Issue form is to create a for a github action.
+        All data should me dummy.
+
+  - type: input
+    id: text
+    attributes:
+      label: Text Field
+      description: Text field with data in tex form
+      # placeholder: ex. email@example.com
+    validations:
+      required: true
+
+  - type: textarea
+    id: multileline
+    attributes:
+      label: Story time
+      description: A text box large enought for a full lengh 
+      placeholder: Tell us what you see!
+      # value: "A bug happened!"
+
+  - type: input
+    id: text
+    attributes:
+      label: Text Field pre filled out.
+      description: Another text field, this time is pre filled with data
+      # placeholder: ex. email@example.com
+    validations:
+      required: true
+
+  - type: dropdown
+    id: version
+    attributes:
+      label: One option
+      description: Select one option from the list
+      options:
+        - Option 1
+        - Option 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: selection
+    attributes:
+      label: A selection of multiple options
+      multiple: true
+      options:
+        - Boiled
+        - Scrambled
+        - Fried
+        - Poached
+
+  - type: checkboxes
+    id: check
+    attributes:
+      label: Yes or No
+      description: If I asked a question?
+      options:
+        - label: yes
