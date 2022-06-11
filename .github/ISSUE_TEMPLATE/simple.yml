@@ -63,4 +63,4 @@ body:
       label: Yes or No
       description: If I asked a question?
       options:
-        - label: yes
+        - label: "yes"
