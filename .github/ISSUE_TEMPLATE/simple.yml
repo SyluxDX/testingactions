@@ -27,11 +27,11 @@ body:
       # value: "A bug happened!"
 
   - type: input
-    id: text
+    id: prefill
     attributes:
       label: Text Field pre filled out.
       description: Another text field, this time is pre filled with data
-      # placeholder: ex. email@example.com
+      value: "A response written by the author of the issue template"
     validations:
       required: true
 
