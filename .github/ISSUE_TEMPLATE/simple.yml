@@ -44,7 +44,7 @@ body:
         - Option 1
         - Option 2
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: selection
