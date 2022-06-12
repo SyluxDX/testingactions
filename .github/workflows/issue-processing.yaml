@@ -29,6 +29,10 @@ jobs:
         with:
           python-version: 3.9 #install the python needed
       - name: execute py script # run file
+        id: pythonscript
         run: |
-          echo "list"
-          python test_python.py "${{ github.event.issue.body }}"
+          response=$(python test_python.py "${{ github.event.issue.body }}")
+          printf "::set-output name=RESPONSE::%s" "$response"
+      - name: Echo response
+        run: echo "${{ setps.pythonscript.outputs.RESPONSE }}"
+
