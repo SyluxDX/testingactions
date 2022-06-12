@@ -1,6 +1,5 @@
 import sys
 
-print("start")
 if len(sys.argv) >= 2:
     body = sys.argv[1].replace("### ", "").replace("_No response_", "").split("\n\n")
     i = 0
@@ -8,4 +7,3 @@ if len(sys.argv) >= 2:
         if body[i+1]:
             print(f"{body[i]}: {body[i+1]}")
         i += 2
-print("end")

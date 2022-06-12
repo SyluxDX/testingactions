@@ -18,17 +18,17 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
 
-      # - name: View the issue author
-      #   run: |
-      #     echo "Issue user: ${{ github.event.issue.user.login }}"
+      - name: View the issue author
+        run: |
+          echo "Issue user: ${{ github.event.issue.user.login }}"
 
-       - name: checkout repo content
-         uses: actions/checkout@v2 # checkout the repository content to github runner.
-       - name: setup python
-         uses: actions/setup-python@v2
-         with:
-           python-version: 3.9 #install the python needed
-       - name: execute py script # run file
-         run: |
-           echo "list"
-           python test_python.py "${{ github.event.issue.body }}"
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9 #install the python needed
+      - name: execute py script # run file
+        run: |
+          echo "list"
+          python test_python.py "${{ github.event.issue.body }}"
