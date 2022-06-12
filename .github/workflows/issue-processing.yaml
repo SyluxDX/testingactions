@@ -32,7 +32,7 @@ jobs:
         id: pythonscript
         run: |
           response=$(python test_python.py "${{ github.event.issue.body }}")
-          printf "::set-output name=RESPONSE::%s" "$response"
+          printf "::set-output name=RESPONSE::%s" ${response//$'\n'/'%0A'}
       - name: Echo response
         run: echo "${{ steps.pythonscript.outputs.RESPONSE }}"
 
