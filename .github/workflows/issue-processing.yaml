@@ -36,3 +36,11 @@ jobs:
       - name: Echo response
         run: echo "${{ steps.pythonscript.outputs.RESPONSE }}"
 
+      - name: execute py script # run file
+        id: pythonscriptv2
+        run: |
+          echo "::set-output name=RESPONSE::$(
+            python test_python.py "${{ github.event.issue.body }}"
+          )"
+      - name: Echo response
+        run: echo "${{ steps.pythonscriptv2.outputs.RESPONSE }}"
