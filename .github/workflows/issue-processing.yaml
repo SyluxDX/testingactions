@@ -34,5 +34,5 @@ jobs:
           response=$(python test_python.py "${{ github.event.issue.body }}")
           printf "::set-output name=RESPONSE::%s" "$response"
       - name: Echo response
-        run: echo "${{ setps.pythonscript.outputs.RESPONSE }}"
+        run: echo "${{ steps.pythonscript.outputs.RESPONSE }}"
 
