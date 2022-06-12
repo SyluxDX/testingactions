@@ -1,5 +1,6 @@
 """ write file """
 import random
+import string
 
 letters = "".join(random.choice(string.ascii_lowercase) for i in range(10))
 
